@@ -1,0 +1,8 @@
+{
+  "name": "Utopia Vote",
+  "description": "Application de vote pour les sujet de la semaine d'Utopia",
+  "image": "heroku/python",
+  "repository": "https://github.com/felixpelletier/utopia-vote",
+  "keywords": ["python", "django" ],
+  "addons": [ "heroku-postgresql" ]
+}
