@@ -7,5 +7,6 @@ import views
 
 urlpatterns = [
     url(r'^resultats', views.resultats, name='resultats'),
+    url(r'^logout', views.logout, name='logout'),
     url(r'^', views.index, name='index'),
 ]
