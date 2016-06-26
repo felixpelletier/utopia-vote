@@ -110,7 +110,7 @@ AUTHENTICATION_BACKENDS = [
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
 LANGUAGE_CODE = 'fr-CA'
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Montreal'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
