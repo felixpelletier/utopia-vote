@@ -37,43 +37,9 @@
 
     <!-- Page Content -->
     <div class="container">
-	<a>Bonjour, {{ user.get_full_name }}!</a>
-	<br>
-	<a href="/logout">Deconnexion</a>
-
-        <h2>Vote Utopia</h2>
-	  <p>Choisissez vos sujets préférés (1=Préféré)</p>                                                                                      
-	  <form action="" method="POST">
-		  {% csrf_token %}
-		  <div class="table-responsive">          
-		  <table class="table">
-		    <thead>
-		      <tr>
-			<th>Sujet</th>
-			<th>Description</th>
-			{% for poids in l_poids %} 
-				<th>{{poids.nom}}</th>
-			{% endfor %}
-		      </tr>
-		    </thead>
-		    <tbody>
-			{% for sujet in sujets %} 
-			<tr>
-				<td>{{sujet.nom}}</td>
-				<td>{{sujet.description}}</td>
-				{% for poids in l_poids %} 
-				<td>
-					<input type="radio" name="{{poids.id}}" value="{{sujet.id}}" data-col="{{ forloop.parentloop.counter }}">
-				</td>
-				{% endfor %}
-			</tr>
-			{% endfor %}
-		    </tbody>
-		  </table>
-		  </div>
-		  <button type="submit" class="btn btn-default">Envoyer</button>
-	  </form>
-
+	<a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}" >
+	<img src="{% static 'fb_connect.png' %}"></img>
+	</a>
     </div>
     <!-- /.container -->
 
@@ -82,20 +48,6 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
-
-    
-    <script>
-
-	var col, el;
-
-	$("input[type=radio]").click(function() {
-	   el = $(this);
-	   col = el.data("col");
-	   $("input[data-col=" + col + "]").prop("checked", false);
-	   el.prop("checked", true);
-	});
-
-    </script>
 
 </body>
 
